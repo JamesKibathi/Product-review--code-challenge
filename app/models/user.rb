@@ -2,17 +2,6 @@ class User < ActiveRecord::Base
     has_many :reviews
     has_many :products, through: :reviews
 
-
-   
-    def reviews
-      reviews.all
-    end
-    
-    def products
-        products.all
-    end
-  
-    
   
     def favorite_product
       self.reviews.order(:star_ratings).last
